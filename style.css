@@ -1,14 +1,7 @@
 /* ============ PLACE YOUR CUSTOM CSS HERE ============ */
-
-@media (max-width: 768px) {
-  .container-fluid.clearfix {
-    height: auto; /* Let the gallery content grow naturally */
-    overflow: visible; /* No independent scrolling in the gallery */
-    margin-bottom: 50px; /* Add spacing below if necessary */
-  }
-
-  body {
-    overflow-y: scroll; /* Enable body scrolling for the entire page */
+@media (max-width: 767px) {
+  .gallery_area {
+    padding-bottom: 150px; /* Optional padding */
   }
 }
 
@@ -30,85 +23,59 @@
   max-width: 600px;
 }
 
-/* IMAGE SECTION */
-
-.column_single_gallery_item {
-  border-radius: 8px;
-}
-
 /* VIDEO SECTION */
 
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
+  padding-bottom: 133.33%; /* Adjusted aspect ratio (4:3) or modify based on your needs */
   height: 0;
   overflow: hidden; /* Prevents overflow */
 }
 
 /* 16:9 Aspect Ratio */
 .video-container-16x9 {
+  position: relative;
+  width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  border-radius: 8px;
+  border-radius: 8px; /* Optional: rounded corners */
+  overflow: hidden; /* Prevents overflow */
 }
 
 /* Invisible pseudo-element to allow scrolling over the iframe */
-.video-container::before {
-  content: ""; /* Empty content */
+/* .video-container::before {
+  content: ""; 
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: all; /* Disables interaction with the pseudo-element */
+  pointer-events: all; 
   border-radius: 8px;
-}
+} */
 
 /* The iframe itself */
-.video-container iframe {
-  position: absolute; /* Position the iframe within the parent */
+/* .video-container iframe {
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  pointer-events: all; /* Enable interactions like play, pause */
-}
-
-.video-container.playing::before {
-  display: none; /* Hide the pseudo-element when video is playing */
-}
-/* --------- */
+  pointer-events: all; 
+} */
 
 .gallery_video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  overflow: auto;
+  height: 100%;
+  object-fit: cover; /* Crop top and bottom */
+  border-radius: 8px; /* Optional: for rounded corners */
 }
 
-.play_button,
-.pause_button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px; /* Set appropriate size for the icon */
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  padding: 15px; /* Adjust padding to keep the button circular */
-  cursor: pointer;
-  z-index: 2;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease;
-  width: 60px; /* Set fixed width */
-  height: 60px; /* Set fixed height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 /* .video-container {
   position: relative;
   width: 100%;
@@ -119,16 +86,6 @@
   justify-content: center;
 } */
 
-.video-container:hover .play_button,
-.video-container:hover .pause_button {
-  opacity: 1; /* Show button on hover */
-}
-
-/* Optional: Hide the play button when video is playing */
-.gallery_video:playing + .play_button {
-  opacity: 0; /* Hide play button when video is playing */
-}
-
 /* VIDEO SECTION END*/
 
 /* WEBSITE */
@@ -138,7 +95,7 @@
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 177.78%; /* Aspect ratio of 9:16 (9/16 = 0.5625, then multiply by 100 for percentage) */
+  padding-bottom: 133.33%; /* Aspect ratio of 9:16 (9/16 = 0.5625, then multiply by 100 for percentage) */
   overflow: hidden;
   border-radius: 8px;
 }
@@ -177,3 +134,12 @@
 }
 
 /* WEBSITE END */
+
+/* images */
+
+.column_single_gallery_item img {
+  width: 90%; /* Ensures the image fills the width of its container */
+  height: 80%; /* Adjust this value to crop the height */
+  object-fit: cover; /* Crops the image by zooming in to fill the container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
