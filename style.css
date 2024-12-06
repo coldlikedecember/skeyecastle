@@ -1,0 +1,145 @@
+/* ============ PLACE YOUR CUSTOM CSS HERE ============ */
+@media (max-width: 767px) {
+  .gallery_area {
+    padding-bottom: 150px; /* Optional padding */
+  }
+}
+
+/* _______________ */
+
+.left-align h3 {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 1rem; /* Adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+.left-align p {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+/* VIDEO SECTION */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 133.33%; /* Adjusted aspect ratio (4:3) or modify based on your needs */
+  height: 0;
+  overflow: hidden; /* Prevents overflow */
+}
+
+/* 16:9 Aspect Ratio */
+.video-container-16x9 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  overflow: hidden; /* Prevents overflow */
+}
+
+/* Invisible pseudo-element to allow scrolling over the iframe */
+/* .video-container::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: all; 
+  border-radius: 8px;
+} */
+
+/* The iframe itself */
+/* .video-container iframe {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: all; 
+} */
+
+.gallery_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop top and bottom */
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+/* .video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* VIDEO SECTION END*/
+
+/* WEBSITE */
+
+/* Make the embed container match the 9:16 aspect ratio */
+.embed-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 133.33%; /* Aspect ratio of 9:16 (9/16 = 0.5625, then multiply by 100 for percentage) */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Style the iframe inside the embed container */
+.embedded-website {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe borders */
+  border-radius: 8px; /* Rounded corners to match other items */
+  overflow: hidden; /* Hide scrollbar */
+  display: block; /* Ensure the iframe fills the space */
+}
+
+/* Style for the view button */
+.view-button {
+  position: absolute;
+  bottom: 10px; /* Position it near the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the button horizontally */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  display: none; /* Hide by default */
+  cursor: pointer;
+}
+
+/* Show the button when hovering over the embed container */
+.embed-container:hover .view-button {
+  display: block;
+}
+
+/* WEBSITE END */
+
+/* images */
+
+.column_single_gallery_item img {
+  width: 90%; /* Ensures the image fills the width of its container */
+  height: 80%; /* Adjust this value to crop the height */
+  object-fit: cover; /* Crops the image by zooming in to fill the container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
